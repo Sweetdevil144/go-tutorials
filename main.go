@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Person struct {
 	name string
 	age  int
@@ -8,15 +10,16 @@ type Person struct {
 func main() {
 
 	//Here we are declaring a variable and then initialising it
-	var a int
-	a = 10
-	println(a)
+	//var a int
+	//a = 10
+	//println(a)
 
 	const b int = 10 //here const keyword is used to define a constant
 
-	displayLoops()
+	//displayLoops()
 	//displayConditionalStatements()
 	//displayFunctions()
+	variadicFunctions(1, 2, 3, 4, 5)
 	//displayPointers()
 	//displayStructs()
 	//displayArrays()
@@ -27,6 +30,17 @@ func main() {
 }
 
 //Code Examples
+
+func variadicFunctions(args ...int) {
+	total := 0
+	for _, v := range args {
+		total += v
+	}
+	fmt.Println("The input arg is taken as a slice and we can use range to iterate over it")
+	fmt.Println(args)
+	fmt.Println(len(args))
+	fmt.Println(total)
+}
 
 func displayLoops() {
 
